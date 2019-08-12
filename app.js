@@ -1,44 +1,44 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-  let topics = ['america','elections','presidential debate','Gabbard']
+  let topics = ['america', 'elections', 'presidential debate', 'Gabbard']
   let buttonDisplay = $('#buttonSection');
   let docDisplay = $('#articles');
   let uSearch = $('#userSearch');
   let uSubmit = $('#userSubmit');
 
-  uSubmit.on('click', function(event){
+  uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
 
     if (userGives !== '') {
-    topics.push(userGives);
-    uSearch.val('');
-    generateButtons();
-  }
+      topics.push(userGives);
+      uSearch.val('');
+      generateButtons();
+    }
   });
 
-  const generateButtons = function(){
+  const generateButtons = function () {
     buttonDisplay.empty();
-    topics.forEach(function(topic){
-      let button = $('<button>').addClass('buttonClass buttonSearch').on('click', function(){
+    topics.forEach(function (topic) {
+      let button = $('<button>').addClass('buttonClass buttonSearch').on('click', function () {
         buttonDisplay.empty();
-        let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q="+topic+"&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3";
-        let foxQueryURL='https://newsapi.org/v2/everything?sources=fox-news&q='+topic+'&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
-        
+        let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q=" + topic + "&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3";
+        let foxQueryURL = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
+        let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=14a60eb3e939d55be739b830c3419a8b& q=breaking news& w=twitter & resolve_urls=true & n=5'
         console.log(queryUrl);
 
         $.ajax({
           url: cnnQueryUrl,
           method: "GET"
-        }).then(function(response){
+        }).then(function (response) {
           console.log('success');
           console.log(response);
 
         });
 
         $.ajax({
-          url:foxQueryURL,
-          method:'GET'
-        }).then(function(response){
+          url: foxQueryURL,
+          method: 'GET'
+        }).then(function (response) {
           console.log('success');
           console.log(response);
         })
@@ -49,10 +49,10 @@ $(document).ready(function() {
     });
 
   }
-  
 
 
-generateButtons();
+
+  generateButtons();
 
 
 
@@ -96,8 +96,4 @@ generateButtons();
   //
   //
   // console.log('ready');
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 9231cdd6f72db4ab49febeb0f6eaa03ad6427c48
