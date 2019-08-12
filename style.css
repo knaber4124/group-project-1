@@ -9,6 +9,11 @@ h1 {
     font-family: 'righteous' , cursive;
 }
 
+#button {
+    background: #17252a;
+    color: #feffff
+}
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
