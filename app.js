@@ -22,6 +22,7 @@ $(document).ready(function() {
       let button = $('<button>').addClass('buttonClass buttonSearch').on('click', function(){
         buttonDisplay.empty();
         let queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json??q="+topic +"&api-key=RwbBajpfHzkqWygBBYW3W35JGHAncHH1";
+        let foxQueryURL='https://newsapi.org/v2/everything?sources=fox-news&'+topic+'&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
         console.log(queryUrl);
 
         $.ajax({
@@ -32,6 +33,14 @@ $(document).ready(function() {
           console.log(response);
 
         });
+
+        $.ajax({
+          url:foxQueryURL,
+          method:'GET'
+        }).then(function(response){
+          console.log('success');
+          console.log(response);
+        })
         generateButtons();
       });
 
@@ -39,6 +48,7 @@ $(document).ready(function() {
     });
 
   }
+  
 
 
 generateButtons();
