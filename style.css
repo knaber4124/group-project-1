@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body {
     background-color: #3aafa9;
 
@@ -50,10 +50,6 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-=======
-h1 {
-    color: red;
->>>>>>> 9231cdd6f72db4ab49febeb0f6eaa03ad6427c48
 }
 
 
@@ -88,8 +84,4 @@ h1 {
 
 .fadeInRight {
     animation-name: fadeInRight;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9231cdd6f72db4ab49febeb0f6eaa03ad6427c48
