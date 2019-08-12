@@ -21,7 +21,7 @@ $(document).ready(function () {
     topics.forEach(function (topic) {
       let button = $('<button>').addClass('buttonClass buttonSearch').on('click', function () {
         buttonDisplay.empty();
-        let queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json??q=" + topic + "&api-key=RwbBajpfHzkqWygBBYW3W35JGHAncHH1";
+        let queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json??q=" + topic + "&api-key=RwbBajpfHzkqWygBBYW3W35JGHAncHH1&begin_date=20181231&sort=newest";
         console.log(queryUrl);
 
         $.ajax({
@@ -30,10 +30,15 @@ $(document).ready(function () {
         }).then(function (response) {
           console.log('success');
           console.log(response.response.docs);
-          response.response.docs.forEach(function () {
-            console.log(response.response.docs.headline.main);
-            console.log(response.response.docs.url)
-          });
+
+          for (i = 0; i<10; i++){
+            console.log('Article #: ' + i)
+            console.log(response.response.docs[i].headline.main);
+            console.log(response.response.docs[i].snippet);
+            console.log(response.response.docs[i].web_url);
+            let image = response.response.docs[i].multimedia[0].url;
+            console.log('https://www.nytimes.com/'+image);
+          }
 
         });
         generateButtons();
@@ -42,7 +47,7 @@ $(document).ready(function () {
       buttonDisplay.append(button.text(topic));
     });
 
-  }
+  };
 
 
   generateButtons();
