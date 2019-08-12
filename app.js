@@ -95,4 +95,8 @@ generateButtons();
   //
   //
   // console.log('ready');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 9231cdd6f72db4ab49febeb0f6eaa03ad6427c48
