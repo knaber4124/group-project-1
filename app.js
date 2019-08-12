@@ -1,33 +1,33 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-  let topics = ['america','elections','presidential debate','Gabbard']
+  let topics = ['america', 'elections', 'presidential debate', 'Gabbard']
   let buttonDisplay = $('#buttonSection');
   let docDisplay = $('#articles');
   let uSearch = $('#userSearch');
   let uSubmit = $('#userSubmit');
 
-  uSubmit.on('click', function(event){
+  uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
 
     if (userGives !== '') {
-    topics.push(userGives);
-    uSearch.val('');
-    generateButtons();
-  }
+      topics.push(userGives);
+      uSearch.val('');
+      generateButtons();
+    }
   });
 
-  const generateButtons = function(){
+  const generateButtons = function () {
     buttonDisplay.empty();
-    topics.forEach(function(topic){
-      let button = $('<button>').addClass('buttonClass buttonSearch').on('click', function(){
+    topics.forEach(function (topic) {
+      let button = $('<button>').addClass('buttonClass buttonSearch').on('click', function () {
         buttonDisplay.empty();
-        let queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json??q="+topic +"&api-key=RwbBajpfHzkqWygBBYW3W35JGHAncHH1";
+        let queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json??q=" + topic + "&api-key=RwbBajpfHzkqWygBBYW3W35JGHAncHH1";
         console.log(queryUrl);
 
         $.ajax({
           url: queryUrl,
           method: "GET"
-        }).then(function(response){
+        }).then(function (response) {
           console.log('success');
           console.log(response);
 
@@ -41,7 +41,7 @@ $(document).ready(function() {
   }
 
 
-generateButtons();
+  generateButtons();
 
 
 
@@ -85,8 +85,4 @@ generateButtons();
   //
   //
   // console.log('ready');
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 9231cdd6f72db4ab49febeb0f6eaa03ad6427c48
