@@ -12,6 +12,10 @@ h1 {
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
+.buttonSection {
+
+}
+
 .search {
   width: 100%;
   position: relative;
@@ -51,6 +55,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 
 
 @keyframes fadeInLeft {
