@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  console.log('ready');
   let topics = ['america', 'elections', 'presidential debate', 'Gabbard']
   let buttonDisplay = $('#buttonSection');
   let docDisplay = $('#articles');
@@ -17,15 +18,20 @@ $(document).ready(function () {
     topics.forEach(function (topic) {
       let button = $('<button>').addClass('buttonClass buttonSearch').on('click', function () {
         buttonDisplay.empty();
-        let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q=" + topic + "&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3";
-        let foxQueryURL = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
-        console.log(queryUrl);
+        let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q=" + topic + "&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3&pageSize=10";
+        let foxQueryURL = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3&pageSize=10';
+        console.log(cnnQueryUrl);
+        console.log(foxQueryURL);
         $.ajax({
           url: cnnQueryUrl,
           method: "GET"
         }).then(function (response) {
-          console.log('success');
           console.log(response);
+          for (i = 0; i < 10; i++) {
+            console.log(response.articles[i].title);
+            console.log(response.articles[i].url);
+            console.log(response.articles[i].urlToImage);
+          }
         });
         $.ajax({
           url: foxQueryURL,
@@ -33,6 +39,11 @@ $(document).ready(function () {
         }).then(function (response) {
           console.log('success');
           console.log(response);
+          for (i = 0; i < 10; i++) {
+            console.log(response.articles[i].title);
+            console.log(response.articles[i].url);
+            console.log(response.articles[i].urlToImage);
+          }
         })
         generateButtons();
       });
@@ -40,34 +51,4 @@ $(document).ready(function () {
     });
   }
   generateButtons();
-  // uSubmit.on('click', function(event) {
-  //   console.log('clicked!');
-  //   let searchTerm = uSearch.val().trim();
-  //   console.log('search term: ' + searchTerm);
-  //
-  //   let searchButton = $("<button>");
-  //   searchButton.addClass('buttonClass searchButton')
-  //   searchButton.text(searchTerm);
-  //   searchButton.data('search', searchTerm);
-  //   searchButton.bind('click', function(){
-  //     console.log($(this.data('search')))
-  //   });
-  //
-  //   if (searchTerm !== '') {
-  //
-  //
-  //     buttonDisplay.append(searchButton);
-  //
-  //   }
-  //
-  //   uSearch.val('');
-  //
-  // });
-  //
-  // $('#clear').on('click', function() {
-  //   $('.buttonClass').remove();
-  // });
-  //
-  //
-  // console.log('ready');
 });
