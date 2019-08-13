@@ -26,14 +26,12 @@ $(document).ready(function () {
 
   uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
-
     if (userGives !== '') {
       topics.push(userGives);
       uSearch.val('');
       generateButtons();
     }
   });
-
   const generateButtons = function () {
     buttonDisplay.empty();
     topics.forEach(function (topic) {
@@ -43,23 +41,13 @@ $(document).ready(function () {
         let foxQueryURL = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
         let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=14a60eb3e939d55be739b830c3419a8b& q=breaking news& w=twitter & resolve_urls=true & n=5'
         console.log(queryUrl);
-
-        $.ajax({
-          url: trendSpotterQueryURL,
-          method: 'GET'
-        }).then(function (response) {
-          console.log('success');
-          console.log(response);
-        })
         $.ajax({
           url: cnnQueryUrl,
           method: "GET"
         }).then(function (response) {
           console.log('success');
           console.log(response);
-
         });
-
         $.ajax({
           url: foxQueryURL,
           method: 'GET'
@@ -69,10 +57,8 @@ $(document).ready(function () {
         })
         generateButtons();
       });
-
       buttonDisplay.append(button.text(topic));
     });
-
   }
 
 
