@@ -45,8 +45,12 @@ $(document).ready(function () {
           url: cnnQueryUrl,
           method: "GET"
         }).then(function (response) {
-          console.log('success');
           console.log(response);
+          for (i = 0; i < 10; i++) {
+            console.log(response.articles[i].title);
+            console.log(response.articles[i].url);
+            console.log(response.articles[i].urlToImage);
+          }
         });
         $.ajax({
           url: foxQueryURL,
@@ -54,6 +58,11 @@ $(document).ready(function () {
         }).then(function (response) {
           console.log('success');
           console.log(response);
+          for (i = 0; i < 10; i++) {
+            console.log(response.articles[i].title);
+            console.log(response.articles[i].url);
+            console.log(response.articles[i].urlToImage);
+          }
         })
         generateButtons();
       });
@@ -64,48 +73,4 @@ $(document).ready(function () {
 
   startOptions();
   generateButtons();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // uSubmit.on('click', function(event) {
-  //   console.log('clicked!');
-  //   let searchTerm = uSearch.val().trim();
-  //   console.log('search term: ' + searchTerm);
-  //
-  //   let searchButton = $("<button>");
-  //   searchButton.addClass('buttonClass searchButton')
-  //   searchButton.text(searchTerm);
-  //   searchButton.data('search', searchTerm);
-  //   searchButton.bind('click', function(){
-  //     console.log($(this.data('search')))
-  //   });
-  //
-  //   if (searchTerm !== '') {
-  //
-  //
-  //     buttonDisplay.append(searchButton);
-  //
-  //   }
-  //
-  //   uSearch.val('');
-  //
-  // });
-  //
-  // $('#clear').on('click', function() {
-  //   $('.buttonClass').remove();
-  // });
-  //
-  //
-  // console.log('ready');
 });
