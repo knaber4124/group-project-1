@@ -1,10 +1,28 @@
 $(document).ready(function () {
 
-  let topics = ['america', 'elections', 'presidential debate', 'Gabbard']
+  let topics = []
   let buttonDisplay = $('#buttonSection');
   let docDisplay = $('#articles');
   let uSearch = $('#userSearch');
   let uSubmit = $('#userSubmit');
+
+  function startOptions() {
+    let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=14a60eb3e939d55be739b830c3419a8b&q=Breaking%20News&w=twitter&resolve_urls=true&n=5'
+
+    $.ajax({
+      url: trendSpotterQueryURL,
+      method: 'GET'
+    }).then(function (response) {
+      console.log('success');
+      console.log(response);
+      let responseArray=response.results.phrases;
+      console.log('success');
+      console.log(response);
+    })
+    for (let i = 0; i < length.responseArray; i++) {
+      topics.push(responseArray[i].value);
+    }
+  }
 
   uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
@@ -26,6 +44,13 @@ $(document).ready(function () {
         let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=14a60eb3e939d55be739b830c3419a8b& q=breaking news& w=twitter & resolve_urls=true & n=5'
         console.log(queryUrl);
 
+        $.ajax({
+          url: trendSpotterQueryURL,
+          method: 'GET'
+        }).then(function (response) {
+          console.log('success');
+          console.log(response);
+        })
         $.ajax({
           url: cnnQueryUrl,
           method: "GET"
@@ -51,8 +76,9 @@ $(document).ready(function () {
   }
 
 
-
+  startOptions();
   generateButtons();
+
 
 
 
