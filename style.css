@@ -18,18 +18,18 @@ h1 {
 
 
 .card {
-    display: inline-block;
     background-color: grey;
-    width: 600px;
-    height: 300px;
-    margin-left: 33%;
-    padding-right: 15px;
-    padding-left: 15px;
+    /* width: 600px;
+    height: 300px; */
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    /* float: left; */
 }
 
 div.card-image {
-    width: 600px;
-    height: 300px;
+    /* width: 600px;
+    height: 300px; */
+    padding: 20px;
 }
 
 .card-content {
