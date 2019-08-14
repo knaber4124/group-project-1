@@ -27,7 +27,7 @@ $(document).ready(function () {
   console.log(topics);
   uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
-    if (userGives !== '') {
+    if (userGives !== '' && !topics.includes(userGives)){
       topics.push(userGives);
       uSearch.val('');
       generateButtons();
