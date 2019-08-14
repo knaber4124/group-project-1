@@ -17,22 +17,19 @@ h1 {
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
-
-#buttonSection {}
-
 .card {
     display: inline-block;
     background-color: grey;
     width: 600px;
     height: 300px;
-    float: left;
-    margin: 30px;
+    margin-left: 33%;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 div.card-image {
     width: 600px;
     height: 300px;
-    padding: 20px;
 }
 
 .card-content {
@@ -40,11 +37,11 @@ div.card-image {
     position: relative;
 }
 
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-}
+/* .search {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+} */
 
 .searchTerm {
     width: 100%;
@@ -71,6 +68,8 @@ div.card-image {
     font-size: 20px;
 }
 
+
+
 /*Resize the wrap to see the search bar change!*/
 .wrap {
     width: 30%;
@@ -78,6 +77,10 @@ div.card-image {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#button {
+    margin: 10px;
 }
 
 
