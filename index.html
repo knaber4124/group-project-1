@@ -5,25 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel='stylesheet' href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Charm:700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='https://cdn.jsdelivr.net/momentjs/2.14.0/moment.min.js'></script>
-    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
 
-    <title>Group Project 1</title>
+
+    <title>Trending News</title>
 </head>
 
 <body>
@@ -38,17 +27,160 @@
     </style>
 
     <h1><span>Trending </span>News</h1>
-    <div class="wrap">
-        <div id="buttonSection"></div>
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="What are you looking for?">
-            <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-            </button>
+
+    <div class="container">
+        <div class="row">
+            <div class="search col s12 offset-m4 m5">
+                <div><input type="text" class="searchTerm" placeholder="What are you looking for?"><i
+                        class="fas fa-search"></i></div>
+                <a class="waves-effect waves-light btn" id="button">button</a>
+                <a class="waves-effect waves-light btn" id="button">button</a>
+                <a class="waves-effect waves-light btn" id="button">button</a>
+                <a class="waves-effect waves-light btn" id="button">button</a>
+                <a class="waves-effect waves-light btn" id="button">button</a>
+                <a class="waves-effect waves-light btn" id="button">button</a>
+
+                </button>
+            </div>
         </div>
     </div>
 
-    <script src="./app.js"></script>
+    <div class="row">
+        <div class="col s12 m6">
+            <img src="https://cdn.worldvectorlogo.com/logos/cnn-logo.svg" alt="CNN Logo"
+                style="width:150px;height:100px">
+        </div>
+        <div class="col s12 m6">
+            <img src="http://cdn.onlinewebfonts.com/svg/download_432831.png" alt="Fox Logo"
+                style="width:100px;height:100px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6 foxLogo">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card">
+                <div class="card-panel hoverable"> Hoverable Card Panel</div>
+                <div class="card-image">
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
+            </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            </script>
+        <script src="https://kit.fontawesome.com/34a409a1d5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/momentjs/2.14.0/moment.min.js'></script>
+        <script src="./app.js"></script>
 
 </body>
 

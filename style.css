@@ -9,14 +9,39 @@ h1 {
     font-family: 'righteous', cursive;
 }
 
+#button {
+    background: #17252a;
+    color: #feffff
+}
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
+.card {
+    background-color: grey;
+    /* width: 600px;
+    height: 300px; */
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    /* float: left; */
 }
+
+div.card-image {
+    /* width: 600px;
+    height: 300px; */
+    padding: 20px;
+}
+
+.card-content {
+    background-color: white;
+    position: relative;
+}
+
+/* .search {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+} */
 
 .searchTerm {
     width: 100%;
@@ -43,6 +68,8 @@ h1 {
     font-size: 20px;
 }
 
+
+
 /*Resize the wrap to see the search bar change!*/
 .wrap {
     width: 30%;
@@ -50,6 +77,10 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#button {
+    margin: 10px;
 }
 
 
