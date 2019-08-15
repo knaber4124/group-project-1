@@ -27,7 +27,7 @@ $(document).ready(function () {
   console.log(topics);
   uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
-    if (userGives !== '' && !topics.includes(userGives)){
+    if (userGives !== '' && !topics.includes(userGives)) {
       topics.push(userGives);
       uSearch.val('');
       generateButtons();
@@ -38,32 +38,53 @@ $(document).ready(function () {
     topics.forEach(function (topic) {
       let button = $('<button>').addClass('buttonClass buttonSearch button waves-effect waves-light btn').on('click', function () {
         buttonDisplay.empty();
+        let foxArticles = null;
+        let cnnArticles = null;
         let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q=" + topic + "&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3";
-        let foxQueryURL = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
-        console.log(queryUrl);
+        let foxQueryUrl = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
+        console.log(foxQueryUrl);
         $.ajax({
           url: cnnQueryUrl,
           method: "GET"
         }).then(function (response) {
+          cnnArticles = response.articles;
+          console.log(cnnArticles);
           console.log(response);
-          for (let i = 0; i < 10; i++) {
+          for (let i = 0; i < 5; i++) {
             console.log(response.articles[i].title);
             console.log(response.articles[i].url);
             console.log(response.articles[i].urlToImage);
           }
-        });
-        $.ajax({
-          url: foxQueryURL,
-          method: 'GET'
-        }).then(function (response) {
-          console.log('success');
-          console.log(response);
-          for (let k = 0; k < 10; k++) {
-            console.log(response.articles[k].title);
-            console.log(response.articles[k].url);
-            console.log(response.articles[k].urlToImage);
+          $.ajax({
+            url: foxQueryUrl,
+            method: 'GET'
+          }).then(function (response) {
+            foxArticles = response.articles;
+            console.log(response);
+            for (let k = 0; k < 5; k++) {
+              console.log(response.articles[k].title);
+              console.log(response.articles[k].url);
+              console.log(response.articles[k].urlToImage);
+            }
+          })
+          if (foxArticles.length === 0 && cnnArticles.length === 0) {
+            console.log('both empty');
           }
-        })
+        });
+        // $.ajax({
+        //   url: foxQueryUrl,
+        //   method: 'GET'
+        // }).then(function (response) {
+        //   foxArticles = response.articles;
+        //   if (foxArticles.length === 0)
+        //     console.log('success');
+        //   console.log(response);
+        //   for (let k = 0; k < 5; k++) {
+        //     console.log(response.articles[k].title);
+        //     console.log(response.articles[k].url);
+        //     console.log(response.articles[k].urlToImage);
+        //   }
+        // })
         generateButtons();
       });
       buttonDisplay.append(button.text(topic));
