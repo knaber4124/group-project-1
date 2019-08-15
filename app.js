@@ -39,26 +39,29 @@ $(document).ready(function () {
       let button = $('<button>').addClass('buttonClass buttonSearch button waves-effect waves-light btn').on('click', function () {
         buttonDisplay.empty();
         let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q=" + topic + "&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3";
-        let foxQueryURL = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
-        console.log(queryUrl);
+        let foxQueryUrl = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3';
+        console.log(foxQueryUrl);
         $.ajax({
           url: cnnQueryUrl,
           method: "GET"
         }).then(function (response) {
           console.log(response);
-          for (let i = 0; i < 10; i++) {
+          for (let i = 0; i < 5; i++) {
             console.log(response.articles[i].title);
             console.log(response.articles[i].url);
             console.log(response.articles[i].urlToImage);
+            if (response.articles=[]){
+              console.log('NOTHING HERE!')
+            }
           }
         });
         $.ajax({
-          url: foxQueryURL,
+          url: foxQueryUrl,
           method: 'GET'
         }).then(function (response) {
           console.log('success');
           console.log(response);
-          for (let k = 0; k < 10; k++) {
+          for (let k = 0; k < 5; k++) {
             console.log(response.articles[k].title);
             console.log(response.articles[k].url);
             console.log(response.articles[k].urlToImage);
