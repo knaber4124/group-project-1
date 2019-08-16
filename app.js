@@ -95,20 +95,6 @@ $(document).ready(function () {
 
         }
         )
-        // $.ajax({
-        //   url: foxQueryUrl,
-        //   method: 'GET'
-        // }).then(function (response) {
-        //   foxArticles = response.articles;
-        //   if (foxArticles.length === 0)
-        //     console.log('success');
-        //   console.log(response);
-        //   for (let k = 0; k < 5; k++) {
-        //     console.log(response.articles[k].title);
-        //     console.log(response.articles[k].url);
-        //     console.log(response.articles[k].urlToImage);
-        //   }
-        // })
         generateButtons();
       });
       buttonDisplay.append(button.text(topic));
