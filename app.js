@@ -69,6 +69,9 @@ $(document).ready(function () {
             }
             if (foxArticles.length === 0 && cnnArticles.length === 0) {
               console.log('both empty');
+              $('.foxDiv').hide();
+              $('.cnnDiv').hide();
+              $('.alternateDiv').show();
               $.ajax({
                 url: alternateQueryUrl,
                 method: 'GET'
@@ -78,14 +81,19 @@ $(document).ready(function () {
                   console.log(response.articles[m].title);
                   console.log(response.articles[m].url);
                   console.log(response.articles[m].urlToImage);
+
                 }
               })
             }
             else if (foxArticles.length === 0) {
               console.log('fox empty')
+              $('.alternateDiv').hide();
+              $('.foxDiv').text('No Articles From Fox Found');
             }
             else if (cnnArticles.length === 0) {
               console.log('cnn empty')
+              $('.alternateDiv').hide();
+              $('.cnnDiv').text('No Arcticles From CNN Found');
             }
             else {
               console.log('both have articles')
