@@ -9,10 +9,6 @@ h1 {
     font-family: 'righteous', cursive;
 }
 
-#button {
-    background: #17252a;
-    color: #feffff
-}
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -37,6 +33,17 @@ div.card-image {
     position: relative;
 }
 
+.icon{
+
+  cursor: pointer;
+
+}
+
+
+.custom-column{
+  text-align: center;
+}
+
 /* .search {
   width: 100%;
   position: relative;
@@ -44,7 +51,7 @@ div.card-image {
 } */
 
 .searchTerm {
-    width: 100%;
+    width: 60%;
     border: 3px solid #00B4CC;
     border-right: none;
     padding: 5px;
@@ -79,8 +86,10 @@ div.card-image {
     transform: translate(-50%, -50%);
 }
 
-#button {
+.buttonClass{
     margin: 10px;
+    background: #17252a;
+    color: #feffff
 }
 
 
