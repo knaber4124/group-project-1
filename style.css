@@ -35,15 +35,15 @@ div.card-image {
     position: relative;
 }
 
-.icon{
+.icon {
 
-  cursor: pointer;
+    cursor: pointer;
 
 }
 
 
-.custom-column{
-  text-align: center;
+.custom-column {
+    text-align: center;
 }
 
 /* .search {
@@ -61,7 +61,9 @@ div.card-image {
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
+    position: relative;
 }
+
 
 
 
@@ -77,6 +79,11 @@ div.card-image {
     font-size: 20px;
 }
 
+#userSubmit {
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+}
 
 
 /*Resize the wrap to see the search bar change!*/
@@ -88,10 +95,14 @@ div.card-image {
     transform: translate(-50%, -50%);
 }
 
-.buttonClass{
+.buttonClass {
     margin: 10px;
     background: #17252a;
     color: #feffff
+}
+
+div.custom-column img {
+    height: 100px;
 }
 
 
@@ -126,4 +137,13 @@ div.card-image {
 
 .fadeInRight {
     animation-name: fadeInRight;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    font-family: 'righteous', cursive;
+    color: #17252a;
+    font-size: 14px;
 }
