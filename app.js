@@ -6,24 +6,24 @@ $(document).ready(function () {
   let uSearch = $('#userSearch');
   let uSubmit = $('#userSubmit');
 
-  // function startOptions() {
-  //   let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=14a60eb3e939d55be739b830c3419a8b&q=Breaking News&w=twitter&resolve_urls=true&n=5'
+  function startOptions() {
+    let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=2f503c7ab9a2421f954f0c4c06e16f38&q=Breaking News&w=twitter&resolve_urls=true&n=5'
 
-  //   $.ajax({
-  //     url: trendSpotterQueryURL,
-  //     method: 'GET'
-  //   }).then(function (response) {
-  //     console.log('success');
-  //     console.log(response);
-  //     let responseArray = response.results.phrases;
+    $.ajax({
+      url: trendSpotterQueryURL,
+      method: 'GET'
+    }).then(function (response) {
+      console.log('success');
+      console.log(response);
+      let responseArray = response.results.phrases;
 
-  //     response.results.phrases.forEach(p => console.log(p));
-  //     for (let j = 0; j < responseArray.length; j++) {
-  //       topics.push(responseArray[j].value);
-  //     }
-  //     generateButtons();
-  //   })
-  // }
+      response.results.phrases.forEach(p => console.log(p));
+      for (let j = 0; j < responseArray.length; j++) {
+        topics.push(responseArray[j].value);
+      }
+      generateButtons();
+    })
+  }
   console.log(topics);
   uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
@@ -110,5 +110,5 @@ $(document).ready(function () {
   }
 
 
-  // startOptions();
+  startOptions();
 });
