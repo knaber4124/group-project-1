@@ -10,7 +10,7 @@ $(document).ready(function () {
   genCol.hide();
 
   function startOptions() {
-    let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=e068b56c29a84a5e62c30bdba07cb6f7&q=Breaking News&w=twitter&resolve_urls=true&n=5';
+    let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=2f503c7ab9a2421f954f0c4c06e16f38&q=Breaking News&w=twitter&resolve_urls=true&n=5';
 
     $.ajax({
       url: trendSpotterQueryURL,
@@ -66,6 +66,7 @@ $(document).ready(function () {
               genCol.show();
 
               for (i = 0; i < 5; i++) {
+                console.log(response.articles[i].url);
                 let url = response.articles[i].url;
                 console.log(url);
                 console.log(response.articles[i].title);
@@ -73,9 +74,9 @@ $(document).ready(function () {
                 console.log(response.articles[i].urlToImage);
                 $('#generalCol').append('<div class="card cnnArticle" style="cursor:pointer"><div class="card-panel hoverable">" ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div>').on('click', function () {
                   window.open(url, '_blank');
-                });
+                })
 
-              }
+              };
               console.log(response);
             });
             console.log('no articles really');
