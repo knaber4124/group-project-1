@@ -114,7 +114,9 @@ $(document).ready(function () {
             if (response.articles.length > 1) {
               $('.foxArticle').remove();
               for (let i = 0; i < 5; i++) {
-                $('#foxCol').append('<a target="_blank" href=' + response.articles[i].url + '><div class="card foxArticle" style="cursor:pointer"><div class="card-panel hoverable"> ' + response.articles[i].title + '</div><div class="card-image"><img src=' + response.articles[i].urlToImage + '></div></div></a>');
+                $('#foxCol').append('<div class="card foxArticle" style="cursor:pointer"><div class="card-panel hoverable"> ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div>').on('click', function () {
+                  window.open(response.articles[i].url, '_blank');
+                });
               }
             }
           });

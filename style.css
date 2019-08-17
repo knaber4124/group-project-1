@@ -7,14 +7,27 @@ body {
 h1 {
     color: #feffff;
     font-family: 'righteous', cursive;
+
+}
+
+h1 {
+    color: #17252a;
+}
+
+
+span {
+    color: white;
 }
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
+
+
 .card {
-    background-color: grey;
+    background-color: #17252a;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     /* width: 600px;
     height: 300px; */
     /* padding-right: 15px;
@@ -33,15 +46,15 @@ div.card-image {
     position: relative;
 }
 
-.icon{
+.icon {
 
-  cursor: pointer;
+    cursor: pointer;
 
 }
 
 
-.custom-column{
-  text-align: center;
+.custom-column {
+    text-align: center;
 }
 
 /* .search {
@@ -52,21 +65,23 @@ div.card-image {
 
 .searchTerm {
     width: 60%;
-    border: 3px solid #00B4CC;
+    border: 3px solid #17252a;
     border-right: none;
     padding: 5px;
     height: 20px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: #17252a;
+    position: relative;
 }
+
 
 
 
 .searchButton {
     width: 40px;
     height: 36px;
-    border: 1px solid #00B4CC;
+    border: 1px solid #17252a;
     background: #17252a;
     text-align: center;
     color: #fff;
@@ -75,6 +90,11 @@ div.card-image {
     font-size: 20px;
 }
 
+#userSubmit {
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+}
 
 
 /*Resize the wrap to see the search bar change!*/
@@ -86,10 +106,18 @@ div.card-image {
     transform: translate(-50%, -50%);
 }
 
-.buttonClass{
+.buttonClass {
     margin: 10px;
     background: #17252a;
-    color: #feffff
+    color: #feffff;
+}
+
+#button {
+    margin: 5px;
+}
+
+div.custom-column img {
+    height: 100px;
 }
 
 
@@ -124,4 +152,13 @@ div.card-image {
 
 .fadeInRight {
     animation-name: fadeInRight;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    font-family: 'righteous', cursive;
+    color: #17252a;
+    font-size: 14px;
 }
