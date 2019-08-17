@@ -7,17 +7,17 @@ body {
 h1 {
     color: #feffff;
     font-family: 'righteous', cursive;
-    
+
 }
 
 h1 {
     color: #17252a;
-  }
+}
 
 
-  span {
+span {
     color: white;
-  }
+}
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -27,7 +27,7 @@ h1 {
 
 .card {
     background-color: #17252a;
-    font-family: "Segoe UI","Helvetica Neue",sans-serif;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     /* width: 600px;
     height: 300px; */
     /* padding-right: 15px;
@@ -109,7 +109,11 @@ div.card-image {
 .buttonClass {
     margin: 10px;
     background: #17252a;
-    color: #feffff
+    color: #feffff;
+}
+
+#button {
+    margin: 5px;
 }
 
 div.custom-column img {
@@ -149,11 +153,12 @@ div.custom-column img {
 .fadeInRight {
     animation-name: fadeInRight;
 }
+
 .footer {
-        position: fixed;
-        bottom:0;
-        height:60px;
-        font-family: 'righteous', cursive;
-        color: #17252a;
-        font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    font-family: 'righteous', cursive;
+    color: #17252a;
+    font-size: 14px;
 }
