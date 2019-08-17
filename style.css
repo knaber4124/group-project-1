@@ -7,14 +7,25 @@ body {
 h1 {
     color: #feffff;
     font-family: 'righteous', cursive;
+    
 }
+
+h1 {
+    color: #17252a;
+  }
+
+
+  span {
+    color: white;
+  }
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
 .card {
-    background-color: grey;
+    background-color: #17252a;
+    font-family: "Segoe UI","Helvetica Neue",sans-serif;
     /* width: 600px;
     height: 300px; */
     /* padding-right: 15px;
@@ -52,13 +63,13 @@ div.card-image {
 
 .searchTerm {
     width: 60%;
-    border: 3px solid #00B4CC;
+    border: 3px solid #17252a;
     border-right: none;
     padding: 5px;
     height: 20px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: #17252a;
 }
 
 
@@ -66,7 +77,7 @@ div.card-image {
 .searchButton {
     width: 40px;
     height: 36px;
-    border: 1px solid #00B4CC;
+    border: 1px solid #17252a;
     background: #17252a;
     text-align: center;
     color: #fff;
@@ -124,4 +135,12 @@ div.card-image {
 
 .fadeInRight {
     animation-name: fadeInRight;
+}
+.footer {
+        position:absolute;
+        bottom:0;
+        height:60px;
+        font-family: 'righteous', cursive;
+        color: #17252a;
+        font-size: 14px;
 }
