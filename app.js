@@ -44,9 +44,9 @@ $(document).ready(function () {
         buttonDisplay.empty();
         let foxArticles = null;
         let cnnArticles = null;
-        let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q=" + topic + "&apiKey=eb588a8a72464a4286033ee18de5d1fa3&pageSize=5";
-        let foxQueryUrl = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=eb588a8a72464a4286033ee18de5d1fa&pageSize=5';
-        let generalQueryUrl = 'https://newsapi.org/v2/everything?q=' + topic + '&apiKey=eb588a8a72464a4286033ee18de5d1fa&pageSize=5'
+        let cnnQueryUrl = "https://newsapi.org/v2/everything?sources=cnn&q=" + topic + "&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3&pageSize=5";
+        let foxQueryUrl = 'https://newsapi.org/v2/everything?sources=fox-news&q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3&pageSize=5';
+        let generalQueryUrl = 'https://newsapi.org/v2/everything?q=' + topic + '&apiKey=d7144e0f89d24c7b9ef1f96d6f4cf7a3&pageSize=5'
         console.log(generalQueryUrl);
         $.ajax({
           url: cnnQueryUrl,
