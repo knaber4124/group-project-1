@@ -23,6 +23,8 @@ h1 {
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
+
+
 .card {
     background-color: #17252a;
     font-family: "Segoe UI","Helvetica Neue",sans-serif;
@@ -44,15 +46,15 @@ div.card-image {
     position: relative;
 }
 
-.icon{
+.icon {
 
-  cursor: pointer;
+    cursor: pointer;
 
 }
 
 
-.custom-column{
-  text-align: center;
+.custom-column {
+    text-align: center;
 }
 
 /* .search {
@@ -70,7 +72,9 @@ div.card-image {
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #17252a;
+    position: relative;
 }
+
 
 
 
@@ -86,6 +90,11 @@ div.card-image {
     font-size: 20px;
 }
 
+#userSubmit {
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+}
 
 
 /*Resize the wrap to see the search bar change!*/
@@ -97,10 +106,14 @@ div.card-image {
     transform: translate(-50%, -50%);
 }
 
-.buttonClass{
+.buttonClass {
     margin: 10px;
     background: #17252a;
     color: #feffff
+}
+
+div.custom-column img {
+    height: 100px;
 }
 
 
