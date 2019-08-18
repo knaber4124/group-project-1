@@ -36,6 +36,16 @@ $(document).ready(function () {
       generateButtons();
     }
   });
+  $(document).keypress(function (event) {
+    console.log('key pressed');
+    userGives = uSearch.val().trim();
+    if (event.which == 13 && userGives !== '' && !topics.includes(userGives)) {
+      topics.push(userGives);
+      uSearch.val('');
+      generateButtons();
+    }
+  });
+
   const generateButtons = function () {
     buttonDisplay.empty();
     topics.forEach(function (topic) {
@@ -72,6 +82,13 @@ $(document).ready(function () {
                 console.log(response.articles[i].title);
                 console.log(response.articles[i].url);
                 console.log(response.articles[i].urlToImage);
+                console.log(article[i]);
+                // if (response.articles[i].urlToImage == null || response.article[i].urlToImage == 0) {
+                //   console.log('No Image')
+                //   let defaultImage = "<img src='https://furcommission.com/wp-content/uploads/New-Images/Home-Page_Slider/News.jpg' alt='Generic News Image'>"
+                //   $('.card-image').empty();
+                //   $('.card-image').append(defaultImage)
+                // }
                 $('#generalCol').append('<div class="card cnnArticle" style="cursor:pointer"><div class="card-panel hoverable">" ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div>').on('click', function () {
                   window.open(url, '_blank');
                 })
