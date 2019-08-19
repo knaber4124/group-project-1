@@ -10,7 +10,7 @@ $(document).ready(function () {
   genCol.hide();
 
   function startOptions() {
-    let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=2f503c7ab9a2421f954f0c4c06e16f38&q=Breaking News&w=twitter&resolve_urls=true&n=5';
+    let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=0e6b120786bf3ca210a83184e06ca250&q=Breaking News&w=twitter&resolve_urls=true&n=5';
 
     $.ajax({
       url: trendSpotterQueryURL,
@@ -31,6 +31,15 @@ $(document).ready(function () {
   uSubmit.on('click', function (event) {
     userGives = uSearch.val().trim();
     if (userGives !== '' && !topics.includes(userGives)) {
+      topics.push(userGives);
+      uSearch.val('');
+      generateButtons();
+    }
+  });
+  $(document).keypress(function (event) {
+    console.log('key pressed');
+    userGives = uSearch.val().trim();
+    if (event.which == 13 && userGives !== '' && !topics.includes(userGives)) {
       topics.push(userGives);
       uSearch.val('');
       generateButtons();
