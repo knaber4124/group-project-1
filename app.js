@@ -81,9 +81,7 @@ $(document).ready(function () {
                 console.log(response.articles[i].title);
                 console.log(response.articles[i].url);
                 console.log(response.articles[i].urlToImage);
-                $('#generalCol').append('<div class="card cnnArticle" style="cursor:pointer"><div class="card-panel hoverable">" ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div>').on('click', function () {
-                  window.open(url, '_blank');
-                })
+                $('#generalCol').append('<a target="_blank" href="'+response.articles[i].url+'"><div class="card cnnArticle" style="cursor:pointer"><div class="card-panel hoverable">" ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div></a>')
 
               };
               console.log(response);
