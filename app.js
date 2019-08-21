@@ -12,6 +12,7 @@ $(document).ready(function () {
   function startOptions() {
     let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=0e6b120786bf3ca210a83184e06ca250&q=Breaking News&w=twitter&resolve_urls=true&n=5';
 
+    
     $.ajax({
       url: trendSpotterQueryURL,
       method: 'GET'
