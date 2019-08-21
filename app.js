@@ -10,7 +10,7 @@ $(document).ready(function () {
   genCol.hide();
 
   function startOptions() {
-    let trendSpotterQueryURL = 'http://api.trendspottr.com/v1.5/search?key=0e6b120786bf3ca210a83184e06ca250&q=Breaking News&w=twitter&resolve_urls=true&n=5';
+    let trendSpotterQueryURL = 'https://api.trendspottr.com/v1.5/search?key=0e6b120786bf3ca210a83184e06ca250&q=Breaking News&w=twitter&resolve_urls=true&n=5';
 
     
     $.ajax({
@@ -46,7 +46,6 @@ $(document).ready(function () {
       generateButtons();
     }
   });
-
   const generateButtons = function () {
     buttonDisplay.empty();
     topics.forEach(function (topic) {
@@ -83,11 +82,7 @@ $(document).ready(function () {
                 console.log(response.articles[i].title);
                 console.log(response.articles[i].url);
                 console.log(response.articles[i].urlToImage);
-                console.log(article[i]);
-                
-                $('#generalCol').append('<div class="card cnnArticle" style="cursor:pointer"><div class="card-panel hoverable">" ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div>').on('click', function () {
-                  window.open(url, '_blank');
-                })
+                $('#generalCol').append('<a target="_blank" href="'+response.articles[i].url+'"><div class="card cnnArticle" style="cursor:pointer"><div class="card-panel hoverable">" ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div></a>')
 
               };
               console.log(response);
@@ -128,12 +123,12 @@ $(document).ready(function () {
             if (response.articles.length > 1) {
               $('.foxArticle').remove();
               for (let i = 0; i < 5; i++) {
-                $('#foxCol').append('<div class="card foxArticle" style="cursor:pointer"><div class="card-panel hoverable"> ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div>').on('click', function () {
-                  window.open(response.articles[i].url, '_blank');
-                });
+                let url= response.articles[i].url;
+                $('#foxCol').append('<a target="_blank" href='+url+'><div class="card foxArticle" style="cursor:pointer"><div class="card-panel hoverable"> ' + response.articles[i].title + '</div><div class="card-image"><img src="' + response.articles[i].urlToImage + '"></div></div></a>');
+                };
               }
             }
-          });
+          );
           // if (foxArticles.length === 0 && cnnArticles.length === 0) {
           //   console.log('both empty');
           // }
